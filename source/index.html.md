@@ -1,168 +1,221 @@
 ---
-title: API Reference
+title: CIViC API Reference
 
 language_tabs:
   - shell
-  - ruby
-  - python
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
+  - <a href='https://cvic.genome.wustl.edu'>Back to CIViC</a>
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
-
-includes:
-  - errors
 
 search: true
 ---
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+CIViC provides a simple API that can be utilized over HTTP in the programming language of your choice or even at the command line.
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+The CIViC API attempts to be RESTful whenever appropriate which hopefully makes it intuitive to use. There are four main entities in the system that a user may interact with: Genes, Variants, Variant Groups, and Evidence Items. These entities form a hierarchy that is reflected in the API endpoints. A Gene has one or more Variants, each of which may have one or more Evidence Items. Variants may also be collected into Variant Groups.
 
-This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+**Disclaimer**: While CIViC is in beta, the API is subject to change in ways that might break existing scripts. When we officially launch, we will version the API such that breaking or non-backwards compatible changes will not not affect current users.
 
-# Authentication
+# Genes
 
-> To authorize, use this code:
+For most users, the primary entry point for the CIViC API will be the Genes endpoint. This endpoint allows a user to retrieve information about what genes are in CIViC as well as get lists of variants for specific genes.
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
+## Get a list of genes
 
 ```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-
-# Kittens
-
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
+curl "https://civic.genome.wustl.edu/api/genes"
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
 ```
 
-This endpoint retrieves all kittens.
+This endpoint returns a listing of genes in CIViC that contain at least one evidence item. Returned gene listings contain variant ids which can be used to query for more detailed variant information.
+This endpoint is *paginated* by default. You can use the `count` and `page` parameters to iterate through all the variants.
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`GET https://civic.genome.wustl.edu/api/genes`
 
 ### Query Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+page | 1 | Which page of results to return
+count | 25 | How many genes to return on a single page
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
 
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
+## Get details for a specific gene.
 
 ```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
+curl "https://civic.genome.wustl.edu/api/genes/ALK?identifier_type=entrez_symbol"
+```
+
+> The above command returns JSON structured like this (truncated for clarity):
+
+```json
+{
+  "id":1,
+  "name":"ALK",
+  "entrez_id":238,
+  "description":"ALK amplifications, fusions and mutations have been shown to be driving events in non-small cell lung cancer. While crizontinib has demonstrated efficacy in treating the amplification, mutations in ALK have been shown to confer resistance to current tyrosine kinase inhibitors. Second-generation TKI's have seen varied success in treating these resistant cases, and the HSP90 inhibitor 17-AAG has been shown to be cytostatic in ALK-altered cell lines.",
+  "variants":[
+    {
+      "name":"EML4-ALK L1152R",
+      "id":307,
+      "evidence_items":{
+        "accepted_count":1,
+        "rejected_count":0,
+        "submitted_count":0
+      }
+    },
+    {
+      "name":"EML4-ALK",
+      "id":5,
+      "evidence_items":{
+        "accepted_count":3,
+        "rejected_count":0,
+        "submitted_count":1
+      }
+    },
+    {
+      "name":"EML4-ALK AMPLIFICATION",
+      "id":170,
+      "evidence_items":{
+        "accepted_count":3,
+        "rejected_count":0,
+        "submitted_count":0
+      }
+    }
+  ],
+  "variant_groups":[],
+  "aliases":[
+    "NBLST3",
+    "CD246"
+  ],
+  "sources":[
+    {
+      "citation":"Rossi et al., 2014, Int. J. Oncol.",
+      "pubmed_id":"24889366",
+      "source_url":"http://www.ncbi.nlm.nih.gov/pubmed/24889366"
+    },
+    {
+      "citation":"Shaw et al., 2013, J. Clin. Oncol.",
+      "pubmed_id":"23401436",
+      "source_url":"http://www.ncbi.nlm.nih.gov/pubmed/23401436"
+    }
+  ]
+}
+```
+
+This endpoint retrieves details about a specific gene.
+
+Not that the default behavior of this endpoint is to use internal CIViC ids. If you want to use Entrez ids or gene symbols, you need to specify the identifier_type parameter.
+
+### HTTP Request
+
+`GET https://civic.genome.wustl.edum/api/genes/:id`
+
+### URL Parameters
+
+Parameter | Valid Values |  Description
+--------- | --------- | -----------
+identifier_type | `entrez_id`, `entrez_symbol`, `civic_id`  | Type of gene identifier used in your query.
+
+# Variants
+
+The variants endpoint allows users to enumerate all of the variants present in CIViC as well as retrieve more detailed information on a specific variant. A common use case would be to get a list of variants for a gene
+using the genes endpoint and then fetching detailed information for each variant via the variants endpoint.
+
+## Get a list of variants
+
+```shell
+curl "https://civic.genome.wustl.edu/api/variants
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
 ```
 
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+This endpoint returns a listing of variants in CIViC that contain at least one evidence item. This endpoint is *paginated* by default. You can use the `count` and `page` parameters to iterate through all the variants.
 
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+`GET https://civic.genome.wustl.edu/api/genes`
 
-### URL Parameters
+### Query Parameters
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
+Parameter | Default | Description
+--------- | ------- | -----------
+page | 1 | Which page of results to return
+count | 25 | How many variants to return on a single page
+
+
+## Get details for a specific variant.
+
+```shell
+curl "https://civic.genome.wustl.edu/api/variants/8
+```
+
+> The above command returns JSON structured like this (truncated for clarity):
+
+```json
+```
+
+This endpoint retrieves details about a specific variant, given its internal CIViC id.
+
+### HTTP Request
+
+`GET https://civic.genome.wustl.edum/api/variants/:id`
+
+# Evidence Items
+
+The evidence items endpoint allows users to enumerate all of the evidence items present in CIViC as well as retrieve more detailed information on a specific evidence item. 
+
+## Get a list of evidence items
+
+```shell
+curl "https://civic.genome.wustl.edu/api/evidence_items
+```
+
+> The above command returns JSON structured like this:
+
+```json
+```
+
+This endpoint returns a listing of evidence items in CIViC. This endpoint is *paginated* by default. You can use the `count` and `page` parameters to iterate through all the evidence items.
+
+### HTTP Request
+
+`GET https://civic.genome.wustl.edu/api/evidence_items`
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+page | 1 | Which page of results to return
+count | 25 | How many evidence items to return on a single page
+
+
+## Get details for a specific evidence item.
+
+```shell
+curl "https://civic.genome.wustl.edu/api/evidence_items/1
+```
+
+> The above command returns JSON structured like this (truncated for clarity):
+
+```json
+```
+
+This endpoint retrieves details about a specific evidence item, given its internal CIViC id.
+
+### HTTP Request
+
+`GET https://civic.genome.wustl.edum/api/evidence_items/:id`
 
