@@ -118,7 +118,7 @@ Not that the default behavior of this endpoint is to use internal CIViC ids. If 
 
 ### HTTP Request
 
-`GET https://civic.genome.wustl.edum/api/genes/:id`
+`GET https://civic.genome.wustl.edu/api/genes/:id`
 
 ### URL Parameters
 
