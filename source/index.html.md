@@ -2,7 +2,7 @@
 title: CIViC API Reference
 
 toc_footers:
-  - <a href='https://cvic.genome.wustl.edu'>Back to CIViC</a>
+  - <a href='https://civic.genome.wustl.edu'>Back to CIViC</a>
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 search: true
