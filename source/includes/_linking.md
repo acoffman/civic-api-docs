@@ -8,7 +8,7 @@ These routes will return a `404` response if the provided ID is not found. Other
 
 > To link to the CIViC page for the Entrez Gene 1956 (EGFR) with the resource style format:
 ```
-https://civic.genome.wustl.edu/links/entrez_id/1956
+https://civicdb.org/links/entrez_id/1956
 ```
 
 **Resource Style Links:**
@@ -17,7 +17,7 @@ Resource style links take the form of `/links/:entity_type/:entity_id`.
 
 > To link to the CIViC page for the variant with ID 12 (BRAF V600E) with the query parameter format:
 ```
-https://civic.genome.wustl.edu/links?idtype=variant&id=12
+https://civicdb.org/links?idtype=variant&id=12
 ```
 
 **Query Parameter Links:**

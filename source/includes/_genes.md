@@ -5,7 +5,7 @@ For most users, the primary entry point for the CIViC API will be the Genes endp
 ## Get a list of genes
 
 ```shell
-curl https://civic.genome.wustl.edu/api/genes
+curl https://civicdb.org/api/genes
 ```
 
 ```json
@@ -16,7 +16,7 @@ curl https://civic.genome.wustl.edu/api/genes
     "total_pages": 11,
     "total_count": 267,
     "links": {
-      "next": "https://civic.genome.wustl.edu/api/genes?count=25&page=2",
+      "next": "https://civicdb.org/api/genes?count=25&page=2",
       "previous": null
     }
   },
@@ -97,7 +97,7 @@ This is an index style endpoint and is *paginated* by default. You can use the `
 
 ### HTTP Request
 
-`GET https://civic.genome.wustl.edu/api/genes`
+`GET https://civicdb.org/api/genes`
 
 ### Query Parameters
 
@@ -110,7 +110,7 @@ count | 25 | How many genes to return on a single page
 ## Get details for a specific gene
 
 ```shell
-curl https://civic.genome.wustl.edu/api/genes/ALK?identifier_type=entrez_symbol
+curl https://civicdb.org/api/genes/ALK?identifier_type=entrez_symbol
 ```
 
 ```json
@@ -260,7 +260,7 @@ Note that the default behavior of this endpoint is to use internal CIViC ids. If
 
 ### HTTP Request
 
-`GET https://civic.genome.wustl.edu/api/genes/:id`
+`GET https://civicdb.org/api/genes/:id`
 
 ### URL Parameters
 
@@ -272,7 +272,7 @@ identifier_type | `entrez_id`, `entrez_symbol`, `civic_id`  | Type of gene ident
 ## Get several genes at once via an indentifier
 
 ```shell
-curl https://civic.genome.wustl.edu/api/genes/TP53,BRAF?identifier_type=entrez_symbol
+curl https://civicdb.org/api/genes/TP53,BRAF?identifier_type=entrez_symbol
 ```
 
 ```json
@@ -341,7 +341,7 @@ The endpoint can be used to fetch overview information for multiple genes at the
 
 ### HTTP Request
 
-`GET https://civic.genome.wustl.edu/api/genes/TP53,BRAF?identifier_type=entrez_symbol`
+`GET https://civicdb.org/api/genes/TP53,BRAF?identifier_type=entrez_symbol`
 
 ### Query Parameters
 

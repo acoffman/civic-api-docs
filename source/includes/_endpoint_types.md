@@ -8,7 +8,7 @@ The API for consuming CIViC data can mostly be broken down into two different ty
 > Example of a meta section for the genes index endpoint
 
 ```shell
-curl https://civic.genome.wustl.edu/api/genes
+curl https://civicdb.org/api/genes
 ```
 
 ```json
@@ -19,8 +19,8 @@ curl https://civic.genome.wustl.edu/api/genes
       "total_pages": 11,
       "total_count": 266,
       "links": {
-        "next": "https://civic.genome.wustl.edu/api/genes?count=25&page=3",
-        "previous": "https://civic.genome.wustl.edu/api/genes?count=25&page=1"
+        "next": "https://civicdb.org/api/genes?count=25&page=3",
+        "previous": "https://civicdb.org/api/genes?count=25&page=1"
       }
    }
 }
@@ -50,7 +50,7 @@ count | 25 | How many records to return on a single page
 > Example of a detail response for the genes endpoint
 
 ```shell
-curl https://civic.genome.wustl.edu/api/genes/19
+curl https://civicdb.org/api/genes/19
 ```
 
 ```json

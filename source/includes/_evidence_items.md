@@ -5,7 +5,7 @@ The evidence items endpoint allows users to enumerate all of the evidence items 
 ## Get a list of evidence items
 
 ```shell
-curl https://civic.genome.wustl.edu/api/evidence_items
+curl https://civicdb.org/api/evidence_items
 ```
 
 ```json
@@ -16,7 +16,7 @@ curl https://civic.genome.wustl.edu/api/evidence_items
     "total_pages": 69,
     "total_count": 1722,
     "links": {
-      "next": "https://civic.genome.wustl.edu/api/evidence_items?count=25&page=2",
+      "next": "https://civicdb.org/api/evidence_items?count=25&page=2",
       "previous": null
     }
   },
@@ -110,7 +110,7 @@ This endpoint returns a listing of evidence items in CIViC. This index style end
 
 ### HTTP Request
 
-`GET https://civic.genome.wustl.edu/api/evidence_items`
+`GET https://civicdb.org/api/evidence_items`
 
 ### Query Parameters
 
@@ -123,7 +123,7 @@ count | 25 | How many variants to return on a single page
 ## Get details for a specific evidence item
 
 ```shell
-curl https://civic.genome.wustl.edu/api/evidence_items/512
+curl https://civicdb.org/api/evidence_items/512
 ```
 
 ```json
@@ -208,5 +208,5 @@ This endpoint retrieves details about a specific evidence item, given its intern
 
 ### HTTP Request
 
-`GET https://civic.genome.wustl.edu/api/evidence_items/:id`
+`GET https://civicdb.org/api/evidence_items/:id`
 

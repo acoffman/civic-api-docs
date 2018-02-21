@@ -5,16 +5,16 @@ All core CIViC entities support several metadata endpoints that allow users to v
 These endpoints can be accessed by appending an additional path segment onto a detail view URL.
 For example, to see the discussion thread for the Variant with CIViC id 5, you could access the endpoint:
 
-`https://civic.genome.wustl.edu/api/variants/5/comments`
+`https://civicdb.org/api/variants/5/comments`
 
 Additionally, due to the hierarchical nature of CIViC entities, you can append the type of a child entity to the detail view of a parent entity in order to view the children.
 
-For example, you could get all of the `variants` for a specific `gene` by querying `https://civic.genome.wustl.edu/api/genes/:gene_id/variants`
-or all the `evidence_items` for a specific `variant` at the path `https://civic.genome.wustl.edu/api/variants/:variant_id/evidence_items`.
+For example, you could get all of the `variants` for a specific `gene` by querying `https://civicdb.org/api/genes/:gene_id/variants`
+or all the `evidence_items` for a specific `variant` at the path `https://civicdb.org/api/variants/:variant_id/evidence_items`.
 
 ### Endpoint Types
 ```shell
-curl https://civic.genome.wustl.edu/api/genes/49/comments
+curl https://civicdb.org/api/genes/49/comments
 ```
 
 ```json

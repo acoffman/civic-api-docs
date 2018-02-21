@@ -6,7 +6,7 @@ using the genes endpoint and then fetching detailed information for each variant
 ## Get a list of variants
 
 ```shell
-curl https://civic.genome.wustl.edu/api/variants
+curl https://civicdb.org/api/variants
 ```
 
 ```json
@@ -17,7 +17,7 @@ curl https://civic.genome.wustl.edu/api/variants
     "total_pages": 30,
     "total_count": 729,
     "links": {
-      "next": "https://civic.genome.wustl.edu/api/variants?count=25&page=2",
+      "next": "https://civicdb.org/api/variants?count=25&page=2",
       "previous": null
     }
   },
@@ -98,7 +98,7 @@ This endpoint returns a listing of variants in CIViC that contain at least one e
 
 ### HTTP Request
 
-`GET https://civic.genome.wustl.edu/api/variants`
+`GET https://civicdb.org/api/variants`
 
 ### Query Parameters
 
@@ -111,7 +111,7 @@ count | 25 | How many variants to return on a single page
 ## Get details for a specific variant.
 
 ```shell
-curl https://civic.genome.wustl.edu/api/variants/8
+curl https://civicdb.org/api/variants/8
 ```
 
 ```json
@@ -288,5 +288,5 @@ This endpoint retrieves details about a specific variant, given its internal CIV
 
 ### HTTP Request
 
-`GET https://civic.genome.wustl.edu/api/variants/:id`
+`GET https://civicdb.org/api/variants/:id`
 

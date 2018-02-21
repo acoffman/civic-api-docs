@@ -5,7 +5,7 @@ The variant groups endpoint allows users to enumerate all of the variant groups 
 ## Get a list of variant groups
 
 ```shell
-curl https://civic.genome.wustl.edu/api/variant_groups
+curl https://civicdb.org/api/variant_groups
 ```
 
 ```json
@@ -189,7 +189,7 @@ This endpoint returns a listing of variant groups in CIViC. This index style end
 
 ### HTTP Request
 
-`GET https://civic.genome.wustl.edu/api/variant_groups`
+`GET https://civicdb.org/api/variant_groups`
 
 ### Query Parameters
 
@@ -202,7 +202,7 @@ count | 25 | How many variants to return on a single page
 ## Get details for a specific variant group
 
 ```shell
-curl https://civic.genome.wustl.edu/api/variant_groups/1
+curl https://civicdb.org/api/variant_groups/1
 ```
 
 ```json
@@ -638,5 +638,5 @@ This endpoint retrieves details about a specific variant group, given its intern
 
 ### HTTP Request
 
-`GET https://civic.genome.wustl.edu/api/variant_groups/:id`
+`GET https://civicdb.org/api/variant_groups/:id`
 
