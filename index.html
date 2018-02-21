@@ -111,7 +111,7 @@
       <div id="toc">
       </div>
         <ul class="toc-footer">
-            <li><a href='https://civic.genome.wustl.edu'>Back to CIViC</a></li>
+            <li><a href='https://civicdb.org'>Back to CIViC</a></li>
             <li><a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
         </ul>
     </div>
@@ -136,7 +136,7 @@
 <blockquote>
 <p>Example of a meta section for the genes index endpoint</p>
 </blockquote>
-<pre class="highlight shell"><code>curl https://civic.genome.wustl.edu/api/genes
+<pre class="highlight shell"><code>curl https://civicdb.org/api/genes
 </code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"_meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nt">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
@@ -144,8 +144,8 @@
       </span><span class="nt">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
       </span><span class="nt">"total_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">266</span><span class="p">,</span><span class="w">
       </span><span class="nt">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://civic.genome.wustl.edu/api/genes?count=25&amp;page=3"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"previous"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://civic.genome.wustl.edu/api/genes?count=25&amp;page=1"</span><span class="w">
+        </span><span class="nt">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://civicdb.org/api/genes?count=25&amp;page=3"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"previous"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://civicdb.org/api/genes?count=25&amp;page=1"</span><span class="w">
       </span><span class="p">}</span><span class="w">
    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -188,7 +188,7 @@ These links can be used to easily traverse all of the records in CIViC. A <code 
 <blockquote>
 <p>Example of a detail response for the genes endpoint</p>
 </blockquote>
-<pre class="highlight shell"><code>curl https://civic.genome.wustl.edu/api/genes/19
+<pre class="highlight shell"><code>curl https://civicdb.org/api/genes/19
 </code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
   </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EGFR"</span><span class="p">,</span><span class="w">
@@ -340,7 +340,7 @@ Unlike the index endpoints, detail endpoints do not have separate <code class="p
 <p>For most users, the primary entry point for the CIViC API will be the Genes endpoint. This endpoint allows a user to retrieve information about what genes are in CIViC as well as get lists of variants for specific genes.</p>
 
 <h2 id="get-a-list-of-genes">Get a list of genes</h2>
-<pre class="highlight shell"><code>curl https://civic.genome.wustl.edu/api/genes
+<pre class="highlight shell"><code>curl https://civicdb.org/api/genes
 </code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"_meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nt">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -348,7 +348,7 @@ Unlike the index endpoints, detail endpoints do not have separate <code class="p
     </span><span class="nt">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
     </span><span class="nt">"total_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">267</span><span class="p">,</span><span class="w">
     </span><span class="nt">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://civic.genome.wustl.edu/api/genes?count=25&amp;page=2"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://civicdb.org/api/genes?count=25&amp;page=2"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"previous"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">},</span><span class="w">
@@ -428,7 +428,7 @@ This is an index style endpoint and is <em>paginated</em> by default. You can us
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://civic.genome.wustl.edu/api/genes</code></p>
+<p><code class="prettyprint">GET https://civicdb.org/api/genes</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -452,7 +452,7 @@ This is an index style endpoint and is <em>paginated</em> by default. You can us
 </tbody></table>
 
 <h2 id="get-details-for-a-specific-gene">Get details for a specific gene</h2>
-<pre class="highlight shell"><code>curl https://civic.genome.wustl.edu/api/genes/ALK?identifier_type<span class="o">=</span>entrez_symbol
+<pre class="highlight shell"><code>curl https://civicdb.org/api/genes/ALK?identifier_type<span class="o">=</span>entrez_symbol
 </code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
   </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ALK"</span><span class="p">,</span><span class="w">
@@ -598,7 +598,7 @@ This is an index style endpoint and is <em>paginated</em> by default. You can us
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://civic.genome.wustl.edu/api/genes/:id</code></p>
+<p><code class="prettyprint">GET https://civicdb.org/api/genes/:id</code></p>
 
 <h3 id="url-parameters">URL Parameters</h3>
 
@@ -617,7 +617,7 @@ This is an index style endpoint and is <em>paginated</em> by default. You can us
 </tbody></table>
 
 <h2 id="get-several-genes-at-once-via-an-indentifier">Get several genes at once via an indentifier</h2>
-<pre class="highlight shell"><code>curl https://civic.genome.wustl.edu/api/genes/TP53,BRAF?identifier_type<span class="o">=</span>entrez_symbol
+<pre class="highlight shell"><code>curl https://civicdb.org/api/genes/TP53,BRAF?identifier_type<span class="o">=</span>entrez_symbol
 </code></pre><pre class="highlight json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
@@ -682,7 +682,7 @@ This is an index style endpoint and is <em>paginated</em> by default. You can us
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://civic.genome.wustl.edu/api/genes/TP53,BRAF?identifier_type=entrez_symbol</code></p>
+<p><code class="prettyprint">GET https://civicdb.org/api/genes/TP53,BRAF?identifier_type=entrez_symbol</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -706,7 +706,7 @@ This is an index style endpoint and is <em>paginated</em> by default. You can us
 using the genes endpoint and then fetching detailed information for each variant via the variants endpoint.</p>
 
 <h2 id="get-a-list-of-variants">Get a list of variants</h2>
-<pre class="highlight shell"><code>curl https://civic.genome.wustl.edu/api/variants
+<pre class="highlight shell"><code>curl https://civicdb.org/api/variants
 </code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"_meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nt">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -714,7 +714,7 @@ using the genes endpoint and then fetching detailed information for each variant
     </span><span class="nt">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
     </span><span class="nt">"total_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">729</span><span class="p">,</span><span class="w">
     </span><span class="nt">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://civic.genome.wustl.edu/api/variants?count=25&amp;page=2"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://civicdb.org/api/variants?count=25&amp;page=2"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"previous"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">},</span><span class="w">
@@ -794,7 +794,7 @@ using the genes endpoint and then fetching detailed information for each variant
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://civic.genome.wustl.edu/api/variants</code></p>
+<p><code class="prettyprint">GET https://civicdb.org/api/variants</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -818,7 +818,7 @@ using the genes endpoint and then fetching detailed information for each variant
 </tbody></table>
 
 <h2 id="get-details-for-a-specific-variant">Get details for a specific variant.</h2>
-<pre class="highlight shell"><code>curl https://civic.genome.wustl.edu/api/variants/8
+<pre class="highlight shell"><code>curl https://civicdb.org/api/variants/8
 </code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
   </span><span class="nt">"entrez_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ALK"</span><span class="p">,</span><span class="w">
@@ -991,14 +991,14 @@ using the genes endpoint and then fetching detailed information for each variant
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://civic.genome.wustl.edu/api/variants/:id</code></p>
+<p><code class="prettyprint">GET https://civicdb.org/api/variants/:id</code></p>
 
           <h1 id="evidence-items">Evidence Items</h1>
 
 <p>The evidence items endpoint allows users to enumerate all of the evidence items present in CIViC as well as retrieve more detailed information on a specific evidence item. This is the endpoint that should be used to obtain a complete listing of every evidence item in CIViC.</p>
 
 <h2 id="get-a-list-of-evidence-items">Get a list of evidence items</h2>
-<pre class="highlight shell"><code>curl https://civic.genome.wustl.edu/api/evidence_items
+<pre class="highlight shell"><code>curl https://civicdb.org/api/evidence_items
 </code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"_meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nt">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -1006,7 +1006,7 @@ using the genes endpoint and then fetching detailed information for each variant
     </span><span class="nt">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">69</span><span class="p">,</span><span class="w">
     </span><span class="nt">"total_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1722</span><span class="p">,</span><span class="w">
     </span><span class="nt">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://civic.genome.wustl.edu/api/evidence_items?count=25&amp;page=2"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://civicdb.org/api/evidence_items?count=25&amp;page=2"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"previous"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">},</span><span class="w">
@@ -1099,7 +1099,7 @@ using the genes endpoint and then fetching detailed information for each variant
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://civic.genome.wustl.edu/api/evidence_items</code></p>
+<p><code class="prettyprint">GET https://civicdb.org/api/evidence_items</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1123,7 +1123,7 @@ using the genes endpoint and then fetching detailed information for each variant
 </tbody></table>
 
 <h2 id="get-details-for-a-specific-evidence-item">Get details for a specific evidence item</h2>
-<pre class="highlight shell"><code>curl https://civic.genome.wustl.edu/api/evidence_items/512
+<pre class="highlight shell"><code>curl https://civicdb.org/api/evidence_items/512
 </code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">512</span><span class="p">,</span><span class="w">
   </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EID512"</span><span class="p">,</span><span class="w">
@@ -1204,14 +1204,14 @@ using the genes endpoint and then fetching detailed information for each variant
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://civic.genome.wustl.edu/api/evidence_items/:id</code></p>
+<p><code class="prettyprint">GET https://civicdb.org/api/evidence_items/:id</code></p>
 
           <h1 id="variant-groups">Variant Groups</h1>
 
 <p>The variant groups endpoint allows users to enumerate all of the variant groups in CIViC and view their membership.</p>
 
 <h2 id="get-a-list-of-variant-groups">Get a list of variant groups</h2>
-<pre class="highlight shell"><code>curl https://civic.genome.wustl.edu/api/variant_groups
+<pre class="highlight shell"><code>curl https://civicdb.org/api/variant_groups
 </code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"_meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nt">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -1391,7 +1391,7 @@ using the genes endpoint and then fetching detailed information for each variant
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://civic.genome.wustl.edu/api/variant_groups</code></p>
+<p><code class="prettyprint">GET https://civicdb.org/api/variant_groups</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1415,7 +1415,7 @@ using the genes endpoint and then fetching detailed information for each variant
 </tbody></table>
 
 <h2 id="get-details-for-a-specific-variant-group">Get details for a specific variant group</h2>
-<pre class="highlight shell"><code>curl https://civic.genome.wustl.edu/api/variant_groups/1
+<pre class="highlight shell"><code>curl https://civicdb.org/api/variant_groups/1
 </code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
   </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Imatinib Resistance"</span><span class="p">,</span><span class="w">
@@ -1847,7 +1847,7 @@ using the genes endpoint and then fetching detailed information for each variant
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://civic.genome.wustl.edu/api/variant_groups/:id</code></p>
+<p><code class="prettyprint">GET https://civicdb.org/api/variant_groups/:id</code></p>
 
           <h1 id="linking">Linking</h1>
 
@@ -1860,7 +1860,7 @@ The API supports two link formats, documented below, that behave identically.</p
 <blockquote>
 <p>To link to the CIViC page for the Entrez Gene 1956 (EGFR) with the resource style format:
 <code class="prettyprint">
-https://civic.genome.wustl.edu/links/entrez_id/1956
+https://civicdb.org/links/entrez_id/1956
 </code></p>
 </blockquote>
 
@@ -1871,7 +1871,7 @@ https://civic.genome.wustl.edu/links/entrez_id/1956
 <blockquote>
 <p>To link to the CIViC page for the variant with ID 12 (BRAF V600E) with the query parameter format:
 <code class="prettyprint">
-https://civic.genome.wustl.edu/links?idtype=variant&amp;id=12
+https://civicdb.org/links?idtype=variant&amp;id=12
 </code></p>
 </blockquote>
 
@@ -1914,15 +1914,15 @@ https://civic.genome.wustl.edu/links?idtype=variant&amp;id=12
 <p>These endpoints can be accessed by appending an additional path segment onto a detail view URL.
 For example, to see the discussion thread for the Variant with CIViC id 5, you could access the endpoint:</p>
 
-<p><code class="prettyprint">https://civic.genome.wustl.edu/api/variants/5/comments</code></p>
+<p><code class="prettyprint">https://civicdb.org/api/variants/5/comments</code></p>
 
 <p>Additionally, due to the hierarchical nature of CIViC entities, you can append the type of a child entity to the detail view of a parent entity in order to view the children.</p>
 
-<p>For example, you could get all of the <code class="prettyprint">variants</code> for a specific <code class="prettyprint">gene</code> by querying <code class="prettyprint">https://civic.genome.wustl.edu/api/genes/:gene_id/variants</code>
-or all the <code class="prettyprint">evidence_items</code> for a specific <code class="prettyprint">variant</code> at the path <code class="prettyprint">https://civic.genome.wustl.edu/api/variants/:variant_id/evidence_items</code>.</p>
+<p>For example, you could get all of the <code class="prettyprint">variants</code> for a specific <code class="prettyprint">gene</code> by querying <code class="prettyprint">https://civicdb.org/api/genes/:gene_id/variants</code>
+or all the <code class="prettyprint">evidence_items</code> for a specific <code class="prettyprint">variant</code> at the path <code class="prettyprint">https://civicdb.org/api/variants/:variant_id/evidence_items</code>.</p>
 
 <h3 id="endpoint-types">Endpoint Types</h3>
-<pre class="highlight shell"><code>curl https://civic.genome.wustl.edu/api/genes/49/comments
+<pre class="highlight shell"><code>curl https://civicdb.org/api/genes/49/comments
 </code></pre><pre class="highlight json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">247</span><span class="p">,</span><span class="w">
