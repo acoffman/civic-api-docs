@@ -139,7 +139,8 @@ Endpoint | Purpose | Example
 
 CIViC Entity | Base Path | Supported Endpoints
 --------- | ------- | ------- 
-Genes | `/api/genes/:gene_id` | `/comments`. `/suggested_changes`, `/revisions`, `/variants`
-Variants | `/api/variants/:variant_id` |`/comments`. `/suggested_changes`, `/revisions`, `/evidence_items`
-Evidence Items | `/api/evidence_items/:eid` |`/comments`. `/suggested_changes`, `/revisions`
-Variant Groups |`/api/variant_groups/:variant_group_id` |`/comments`. `/suggested_changes`, `/revisions`
+Genes | `/api/genes/:gene_id` | `/comments`, `/suggested_changes`, `/revisions`, `/variants`
+Variants | `/api/variants/:variant_id` |`/comments`, `/suggested_changes`, `/revisions`, `/evidence_items`
+Evidence Items | `/api/evidence_items/:eid` |`/comments`, `/suggested_changes`, `/revisions`
+Variant Groups |`/api/variant_groups/:variant_group_id` |`/comments`, `/suggested_changes`, `/revisions`
+Assertions | `/api/assertions/:aid` | `/comments`, `/suggested_changes`, `/revisions`

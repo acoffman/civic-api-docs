@@ -17,6 +17,7 @@ includes:
   - variants
   - evidence_items
   - variant_groups
+  - assertions
   - linking
   - meta
 ---
