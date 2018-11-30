@@ -32,6 +32,10 @@ Entity Type | Description
 gene | CIViC Gene ID
 entrez_id | Entrez Gene ID
 variant| CIViC Variant ID
+allele_registry | Variant Allele Registry ID
 evidence | CIViC Evidence ID
+variant_group | CIViC Variant Group ID
+assertion | CIViC Assertion ID
+revision | CIViC Revision ID
 
-For more natural seeming resource based endpoints, the plural versions of the primary CViC entity types are also supported (`genes`, `variants`, `evidence_items`) and behave identically to their singular counterparts.
+For more natural seeming resource based endpoints, the plural versions of the primary CViC entity types are also supported (`genes`, `variants`, `evidence_items`, `variant_groups`, `assertions`, `revisions`) and behave identically to their singular counterparts.
