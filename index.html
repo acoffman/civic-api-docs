@@ -3200,6 +3200,64 @@ or all the <code class="prettyprint">evidence_items</code> for a specific <code 
 </tr>
 </tbody></table>
 
+          <h1 id="throttling">Throttling</h1>
+
+<p>In order to keep the CIViC API reliable, free, and open to all, we maintain some basic rate limits on its usage.</p>
+
+<p>The default rate limit is approximately 2 requests/second calculated over a 5 minute moving window. That means you may burst substantially higher than 2 requests/second for short periods.</p>
+
+<p>If you are hitting the rate limit, you will get a <code class="prettyprint">429 Too Many Requests</code> HTTP respone. You will need to wait for that five minute window to elapse before making additional requests.</p>
+
+<p><strong>HTTP Headers</strong></p>
+
+<p>CIViC provides information about the current rate limit and your progress towards it via headers in the HTTP response. The following headers are available:</p>
+
+<table><thead>
+<tr>
+<th>Header Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>RateLimit-Limit</td>
+<td>The total number of requests allowed in the time window</td>
+</tr>
+<tr>
+<td>RateLimit-Remaining</td>
+<td>The number of requests you have remaining during the time window</td>
+</tr>
+<tr>
+<td>RateLimit-Reset</td>
+<td>Time (seconds since the Unix Epoch) when the time window resets</td>
+</tr>
+</tbody></table>
+
+<p><strong>Avoiding the rate limit in scripts</strong></p>
+
+<p>Here are several tips and techniques you can employ to stay under the rate limit.</p>
+
+<ul>
+<li><em>Delay/Sleep</em>
+
+<ul>
+<li>If you know you&rsquo;re going to be performing many requests over a sustained period of time, one of the simplest methods is to introduce a slight delay between requests. That will allow you to remain under the rate limit indefinitely and your script to run uninterrupted.</li>
+</ul></li>
+<li><em>Caching</em>
+
+<ul>
+<li>Often we see many requests for the same entity repeated over and over. While CIViC data does update regularly, caching the result for a request for the duration of a script will help you stay under the rate limit and increase the performance of your script at the same time.</li>
+</ul></li>
+<li><em>Automated Backoff</em>
+
+<ul>
+<li>The most surefire way to make sure you never get rate limited is to use the HTTP response headers documented above. Before your script makes another request, it can check the <code class="prettyprint">RateLimit-Remaining</code> header and if it sees a 1 or 0, not make additional requests until <code class="prettyprint">RateLimit-Reset</code>. You can also wait to get a <code class="prettyprint">429</code> status code, put in a similar delay and retry your request.</li>
+</ul></li>
+</ul>
+
+<p><strong>Reach out to us!</strong></p>
+
+<p>If you have a use case that isn&rsquo;t being addressed, think you need an increased rate limit, or have questions about efficiently using the CIViC API, please send us an email at <a href="mailto:help@civicdb.org">help@civicdb.org</a> and we&rsquo;d be happy to chat! Our goal is to keep the API freely accessible to everyone and not to limit usage as much as possible.</p>
+
       </div>
       <div class="dark-box">
           <div class="lang-selector">
