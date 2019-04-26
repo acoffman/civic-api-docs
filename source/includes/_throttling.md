@@ -4,7 +4,7 @@ In order to keep the CIViC API reliable, free, and open to all, we maintain some
 
 The default rate limit is approximately 2 requests/second calculated over a 5 minute moving window. That means you may burst substantially higher than 2 requests/second for short periods.
 
-If you are hitting the rate limit, you will get a `429 Too Many Requests` HTTP respone. You will need to wait for that five minute window to elapse before making additional requests.
+If you are hitting the rate limit, you will get a `429 Too Many Requests` HTTP response. You will need to wait for that five minute window to elapse before making additional requests.
 
 **HTTP Headers**
 
